@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Clock from './Clock';
+import Example from './Example';
 
 class App extends Component {
     constructor( props ) {
@@ -29,10 +30,11 @@ class App extends Component {
                 <p className="App-intro">
                     To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
-                <button onClick={this.handleToggle}>
+                <Example />
+                {/*<button onClick={this.handleToggle}>
                     { this.state.showClock? 'Hide clock':'Show clock'}
                 </button>
-                <Clock show={this.state.showClock}/>
+                <Clock show={this.state.showClock}/>*/}
             </div>
         );
     }

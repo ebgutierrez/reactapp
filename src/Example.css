@@ -1,0 +1,40 @@
+.Example {
+    margin : 0 auto;
+    width : 100%;
+    background : blue;
+    text-align: left;
+}
+
+
+.Example .panel .inner-panel {
+    /*border : 1px solid #CCC;*/
+}
+
+.Example .panel .inner-panel ul {
+    list-style: none;
+    padding: 0px;
+    margin : 0px;
+}
+
+.Example .panel .inner-panel .panel-header {
+    padding: 5px;
+    background: #222;
+    color : #FFFFFF;
+    font-weight: bold;
+}
+
+.left {
+    float : left;
+}
+
+.right {
+    float: right;
+}
+
+.w25 {
+    width : 25%;
+}
+
+.w75 {
+    width : 74.8%;
+}
