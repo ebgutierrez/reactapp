@@ -13,8 +13,10 @@ class ListItem extends Component {
     }
 
     render() {
+        let active = ( this.props.route === this.props.activeRoute ) ? 'active' : '';
+
         return (
-            <li onClick = { this.handleClick } data-route = {this.props.route} ><Link to={ `${this.props.route}` }>{ this.props.value }</Link></li>
+            <li className={ active } onClick = { this.handleClick } data-route = {this.props.route} ><Link to={ `${this.props.route}` }>{ this.props.value }</Link></li>
         );
     }
 }

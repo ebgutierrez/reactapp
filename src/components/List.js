@@ -11,30 +11,19 @@ class List extends Component {
     }
 
     handleClick( route ) {
-        let liEls = this.refs.navlist.children,
-            key;
+        let liEls = this.refs.navlist.children;
 
-        for( key in liEls ) {
-            
-            if( !isNaN( key ) ) {
-
-                if( liEls[ key ].getAttribute('data-route') === route ) {
-                    liEls[ key ].setAttribute( 'class', 'active' );   
-                } else {
-                    liEls[ key ].setAttribute( 'class', '' );
-                }
-            }
-        }
-        
+        this.props.onClick( route, liEls );
     }
 
     render() {
         const listItems = this.props.list.map( ( item ) => {
             return (
-                <ListItem   key     = { item.name }
-                            value   = { item.value }
-                            route   = { item.route }
-                            onClick = { this.handleClick }/>
+                <ListItem   key         = { item.name }
+                            value       = { item.value }
+                            route       = { item.route }
+                            activeRoute = { this.props.activeRoute }
+                            onClick     = { this.handleClick }/>
             );
         } );
 
