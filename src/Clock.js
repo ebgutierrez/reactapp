@@ -26,10 +26,6 @@ class Clock extends Component {
 
     render() {
 
-        if( !this.props.show ) {
-            return null;
-        }
-
         return (
             <div>
                 <h1>Time</h1>

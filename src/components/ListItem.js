@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ListItem extends Component {
     constructor( props ) {
@@ -7,17 +8,13 @@ class ListItem extends Component {
         this.handleClick = this.handleClick.bind( this );
     }
 
-    handleClick( e ) {
-        const props = this.props;
-
-        props.onNavClick( props.component, props.value )
+    handleClick ( ) {        
+        this.props.onClick( this.props.link );
     }
 
     render() {
         return (
-            <a href='#' onClick={ this.handleClick } >
-                <li>{this.props.value}</li>
-            </a>
+            <li onClick = { this.handleClick } data-link = {this.props.link} ><Link to={ `${this.props.link}` }>{ this.props.value }</Link></li>
         );
     }
 }

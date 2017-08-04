@@ -1,41 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+    BrowserRouter as Router,
+    Route
+} from 'react-router-dom';
+
+/*import components*/
+import Header from './components/Header/Header';
+import Sidebar from './components/Body/Sidebar';
 import Clock from './Clock';
-import Example from './Example';
+
+/*import css*/
+import './resources/dashboard.css';
+
 
 class App extends Component {
-    constructor( props ) {
-        super( props );
-        this.state = {
-            showClock : false
-        };
-
-        this.handleToggle = this.handleToggle.bind( this );
-    }
-
-    handleToggle() {
-        this.setState( previousState => ({
-            showClock : !previousState.showClock
-        }));
-    }
-
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h2>Welcome to React</h2>
+            <Router>
+                <div>
+                    <Header/>
+                    <div className = 'container-fluid'>
+                        <div className = 'row'>
+                            <Sidebar />
+                            <div className = 'col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
+                                <Route path='/clock' component={Clock}></Route>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
-                <Example />
-                {/*<button onClick={this.handleToggle}>
-                    { this.state.showClock? 'Hide clock':'Show clock'}
-                </button>
-                <Clock show={this.state.showClock}/>*/}
-            </div>
+            </Router>
         );
     }
 }
