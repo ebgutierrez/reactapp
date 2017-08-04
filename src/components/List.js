@@ -10,7 +10,7 @@ class List extends Component {
         this.handleClick = this.handleClick.bind( this );
     }
 
-    handleClick( link ) {
+    handleClick( route ) {
         let liEls = this.refs.navlist.children,
             key;
 
@@ -18,7 +18,7 @@ class List extends Component {
             
             if( !isNaN( key ) ) {
 
-                if( liEls[ key ].getAttribute('data-link') === link ) {
+                if( liEls[ key ].getAttribute('data-route') === route ) {
                     liEls[ key ].setAttribute( 'class', 'active' );   
                 } else {
                     liEls[ key ].setAttribute( 'class', '' );
@@ -33,7 +33,7 @@ class List extends Component {
             return (
                 <ListItem   key     = { item.name }
                             value   = { item.value }
-                            link    = { item.link }
+                            route   = { item.route }
                             onClick = { this.handleClick }/>
             );
         } );

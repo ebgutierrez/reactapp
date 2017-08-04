@@ -10,11 +10,11 @@ class Sidebar extends Component {
             {
                 name  : 'clock',
                 value : 'Clock',
-                link  : 'clock'
+                route  : 'clock'
             }, {
                 name  : 'todolist',
                 value : 'Todo List',
-                link  : 'todo'
+                route  : 'todo'
             }
         ];
 

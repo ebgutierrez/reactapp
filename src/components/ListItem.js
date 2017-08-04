@@ -9,12 +9,12 @@ class ListItem extends Component {
     }
 
     handleClick ( ) {        
-        this.props.onClick( this.props.link );
+        this.props.onClick( this.props.route );
     }
 
     render() {
         return (
-            <li onClick = { this.handleClick } data-link = {this.props.link} ><Link to={ `${this.props.link}` }>{ this.props.value }</Link></li>
+            <li onClick = { this.handleClick } data-route = {this.props.route} ><Link to={ `${this.props.route}` }>{ this.props.value }</Link></li>
         );
     }
 }
