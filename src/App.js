@@ -7,7 +7,8 @@ import {
 /*import components*/
 import Header from './components/Header/Header';
 import SidebarNav from './containers/Body/SidebarNav';
-import Clock from './Clock';
+import Clock from './Examples/Clock/Clock';
+import Comments from './Examples/Comments/Comments';
 
 /*import css*/
 import './resources/dashboard.css';
@@ -26,6 +27,7 @@ class App extends Component {
                             <div className = 'col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
                                 <Route exact path='/' component={Clock}></Route>
                                 <Route path='/clock' component={Clock}></Route>
+                                <Route path='/comments' component={Comments}></Route>
                             </div>
                         </div>
                     </div>

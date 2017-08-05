@@ -6,9 +6,9 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
 
-import navigation from './reducers/navigation';
+import app from './reducers/reducers';
 
-let store = createStore(navigation);
+let store = createStore( app );
 
 ReactDOM.render(
     <Provider store={store}>

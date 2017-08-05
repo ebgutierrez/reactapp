@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import changeNav from './../../actions/navigation';
+import { changeNav } from './../../actions/actions';
 import Sidebar from './../../components/Body/Sidebar';
 
 const getHash = () => {

@@ -1,13 +1,7 @@
-// import { combineReducers } from 'redux';
+import {CHANGE_NAV} from './../actions/actions';
 
-import {CHANGE_NAV} from './../actions/navigation';
+const nav = ( state = { route : 'clock' }, action ) => {
 
-const initialState = {
-    route : 'clock'
-}
-
-/*reducer for navigation*/
-export default function navigation( state = initialState, action ) {
     switch( action.type ) {
         case CHANGE_NAV:
             return Object.assign({}, state, {
@@ -17,3 +11,5 @@ export default function navigation( state = initialState, action ) {
             return state;
     }
 }
+
+export default nav;

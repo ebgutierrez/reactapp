@@ -5,6 +5,7 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
+  background: #F6F6F6;
 }
 
 
@@ -25,6 +26,14 @@ body {
   border: 0;
 }
 
+.navbar {
+  background : #35baf6;
+}
+
+.navbar .navbar-brand {
+  color : #FFFFFF;
+}
+
 /*
  * Sidebar
  */
@@ -32,6 +41,15 @@ body {
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
+}
+
+#sidebar {
+  background: #32404e;
+  margin-top: -1px;
+}
+
+#sidebar a {
+  color : #adb3b8;
 }
 @media (min-width: 768px) {
   .sidebar {
@@ -59,11 +77,17 @@ body {
   padding-right: 20px;
   padding-left: 20px;
 }
-.nav-sidebar > .active > a,
+
+.nav-sidebar > li > a:hover,
+.nav-sidebar > li > a:focus,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  color: #fff;
-  background-color: #428bca;
+  background-color: rgba(71,83,96,.4);
+}
+
+.nav-sidebar > .active > a {
+  border-left : 4px solid #35baf6;
+  background: #475360;
 }
 
 
@@ -76,8 +100,8 @@ body {
 }
 @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 .main .page-header {
@@ -102,4 +126,9 @@ body {
 .placeholder img {
   display: inline-block;
   border-radius: 50%;
+}
+
+.panel-default > .panel-heading {
+  background: #35baf6;
+  color: #ffffff;
 }

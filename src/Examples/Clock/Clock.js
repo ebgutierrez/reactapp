@@ -27,9 +27,13 @@ class Clock extends Component {
     render() {
 
         return (
-            <div>
-                <h1>Time</h1>
-                <h2>Today is {this.state.date.toLocaleString()}!</h2>
+            <div className = "panel panel-default">
+                <div className = "panel-heading">
+                    <h3 className = "panel-title">Time</h3>
+                </div>
+                <div className = "panel-body">
+                    Today is {this.state.date.toLocaleString()}!
+                </div>
             </div>
         );
     }
