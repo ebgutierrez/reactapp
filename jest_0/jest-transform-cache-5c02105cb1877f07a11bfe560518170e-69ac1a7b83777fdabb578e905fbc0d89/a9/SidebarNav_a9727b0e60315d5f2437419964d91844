@@ -1,0 +1,48 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _reactRedux = require('react-redux');
+
+var _actions = require('./../../actions/actions');
+var _Sidebar = require('./../../components/Body/Sidebar');var _Sidebar2 = _interopRequireDefault(_Sidebar);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+const getHash = () => {
+
+    let hash = window.location.hash.split('/'),
+    hashRoute = hash[1];
+
+    return hashRoute || 'clock';
+};
+
+const mapStateToProps = state => {
+    return {
+        route: state.route,
+        hashRoute: getHash() };
+
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onNavClick: (route, liElements) => {
+            let key;
+
+            for (key in liElements) {
+
+                if (!isNaN(key)) {
+
+                    if (liElements[key].getAttribute('data-route') === route) {
+                        liElements[key].setAttribute('class', 'active');
+                    } else {
+                        liElements[key].setAttribute('class', '');
+                    }
+                }
+            }
+
+            dispatch((0, _actions.changeNav)(route));
+        } };
+
+};
+
+const SidebarNav = (0, _reactRedux.connect)(
+mapStateToProps,
+mapDispatchToProps)(_Sidebar2.default);exports.default =
+
+
+SidebarNav;

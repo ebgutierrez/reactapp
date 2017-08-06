@@ -1,0 +1,27 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true }); /*
+                                                                             * Actions
+                                                                             */
+const CHANGE_NAV = exports.CHANGE_NAV = 'CHANGE_NAV';
+const ADD_COMMENT = exports.ADD_COMMENT = 'ADD_COMMENT';
+
+let nextCommentId = 3;
+
+
+/*
+                        * Actions creators
+                        */
+const changeNav = exports.changeNav = route => {
+    return {
+        type: CHANGE_NAV,
+        route };
+
+};
+
+const addComment = exports.addComment = (name, comment) => {
+    return {
+        type: ADD_COMMENT,
+        id: nextCommentId++,
+        name: name,
+        comment: comment };
+
+};

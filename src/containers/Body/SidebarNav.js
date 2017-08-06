@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { changeNav } from './../../actions/actions';
 import Sidebar from './../../components/Body/Sidebar';
 
+/**
+ * Get the Hash from URL to set activated sidebar navigation
+ * Useful when page is refreshed
+ * @return {string} Returns the route
+ */
 const getHash = () => {
         
     let hash = window.location.hash.split('/'),

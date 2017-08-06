@@ -1,0 +1,23 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/var/www/html/my-app/src/Examples/Comments/Comments.js';
+
+/*import components/containers*/var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _AddComment = require('./container/AddComment');var _AddComment2 = _interopRequireDefault(_AddComment);
+var _ViewComments = require('./container/ViewComments');var _ViewComments2 = _interopRequireDefault(_ViewComments);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class Comments extends _react.Component {
+    render() {
+        return (
+            _react2.default.createElement('div', { className: 'panel panel-default', __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this },
+                _react2.default.createElement('div', { className: 'panel-heading', __source: { fileName: _jsxFileName, lineNumber: 11 }, __self: this },
+                    _react2.default.createElement('h3', { className: 'panel-title', __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this }, 'Comments')),
+
+                _react2.default.createElement('div', { className: 'panel-body', __source: { fileName: _jsxFileName, lineNumber: 14 }, __self: this },
+                    _react2.default.createElement(_AddComment2.default, { __source: { fileName: _jsxFileName, lineNumber: 15 }, __self: this }),
+                    _react2.default.createElement(_ViewComments2.default, { __source: { fileName: _jsxFileName, lineNumber: 16 }, __self: this }))));
+
+
+
+    }}exports.default =
+
+
+Comments;

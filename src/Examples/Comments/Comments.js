@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 /*import components/containers*/
 import AddComment from './container/AddComment';
+import ViewComments from './container/ViewComments';
 
 class Comments extends Component {
     render() {
@@ -12,6 +13,7 @@ class Comments extends Component {
                 </div>
                 <div className = "panel-body">
                     <AddComment />
+                    <ViewComments />
                 </div>
             </div>
         );

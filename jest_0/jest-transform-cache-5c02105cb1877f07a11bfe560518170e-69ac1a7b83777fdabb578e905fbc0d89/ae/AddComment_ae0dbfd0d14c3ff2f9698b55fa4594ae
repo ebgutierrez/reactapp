@@ -1,0 +1,72 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/var/www/html/my-app/src/Examples/Comments/container/AddComment.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactRedux = require('react-redux');
+var _actions = require('../../../actions/actions');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class AddComment extends _react.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.state = {
+            name: '',
+            comment: '' };
+
+    }
+
+    handleChange(e) {
+        const target = e.target,
+        value = target.value,
+        name = target.name;
+
+        this.setState({
+            [name]: value });
+
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        if (!this.state.name.trim() || !this.state.comment.trim()) {
+            return;
+        }
+
+        this.props.dispatch((0, _actions.addComment)(this.state.name.trim(), this.state.comment.trim()));
+
+        this.setState({
+            name: '',
+            comment: '' });
+
+    }
+
+    render() {
+        return (
+            _react2.default.createElement('form', { onSubmit: this.handleSubmit, __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this },
+                _react2.default.createElement('div', { className: 'form-group', __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this },
+                    _react2.default.createElement('input', { type: 'text',
+                        className: 'form-control',
+                        id: 'name',
+                        placeholder: 'Name',
+                        name: 'name',
+                        value: this.state.name,
+                        onChange: this.handleChange, __source: { fileName: _jsxFileName, lineNumber: 48 }, __self: this })),
+
+                _react2.default.createElement('div', { className: 'form-group', __source: { fileName: _jsxFileName, lineNumber: 56 }, __self: this },
+                    _react2.default.createElement('textarea', { className: 'form-control',
+                        id: 'comment',
+                        placeholder: 'Comment',
+                        name: 'comment',
+                        value: this.state.comment,
+                        onChange: this.handleChange, __source: { fileName: _jsxFileName, lineNumber: 57 }, __self: this })),
+
+                _react2.default.createElement('button', { type: 'submit', className: 'btn btn-default', __source: { fileName: _jsxFileName, lineNumber: 64 }, __self: this }, 'Submit')));
+
+
+    }}
+
+
+AddComment = (0, _reactRedux.connect)()(AddComment);exports.default =
+
+AddComment;

@@ -1,0 +1,40 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/var/www/html/my-app/src/App.js';
+
+
+
+
+
+/*import components*/
+
+
+
+
+
+/*import css*/var _react = require('react');var _react2 = _interopRequireDefault(_react);var _reactRouterDom = require('react-router-dom');var _Header = require('./components/Header/Header');var _Header2 = _interopRequireDefault(_Header);var _SidebarNav = require('./containers/Body/SidebarNav');var _SidebarNav2 = _interopRequireDefault(_SidebarNav);var _Clock = require('./Examples/Clock/Clock');var _Clock2 = _interopRequireDefault(_Clock);var _Comments = require('./Examples/Comments/Comments');var _Comments2 = _interopRequireDefault(_Comments);
+require('./resources/dashboard.css');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class App extends _react.Component {
+
+    render() {
+
+        return (
+            _react2.default.createElement(_reactRouterDom.HashRouter, { __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this },
+                _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 22 }, __self: this },
+                    _react2.default.createElement(_Header2.default, { __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: this }),
+                    _react2.default.createElement('div', { className: 'container-fluid', __source: { fileName: _jsxFileName, lineNumber: 24 }, __self: this },
+                        _react2.default.createElement('div', { className: 'row', __source: { fileName: _jsxFileName, lineNumber: 25 }, __self: this },
+                            _react2.default.createElement(_SidebarNav2.default, { __source: { fileName: _jsxFileName, lineNumber: 26 }, __self: this }),
+                            _react2.default.createElement('div', { className: 'col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main', __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: this },
+                                _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Clock2.default, __source: { fileName: _jsxFileName, lineNumber: 28 }, __self: this }),
+                                _react2.default.createElement(_reactRouterDom.Route, { path: '/clock', component: _Clock2.default, __source: { fileName: _jsxFileName, lineNumber: 29 }, __self: this }),
+                                _react2.default.createElement(_reactRouterDom.Route, { path: '/comments', component: _Comments2.default, __source: { fileName: _jsxFileName, lineNumber: 30 }, __self: this })))))));
+
+
+
+
+
+
+    }}exports.default =
+
+
+App;

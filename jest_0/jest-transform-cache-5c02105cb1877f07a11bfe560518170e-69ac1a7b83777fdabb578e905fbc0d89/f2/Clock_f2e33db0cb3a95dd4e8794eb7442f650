@@ -1,0 +1,42 @@
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = "/var/www/html/my-app/src/Examples/Clock/Clock.js";var _react = require("react");var _react2 = _interopRequireDefault(_react);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class Clock extends _react.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            date: new Date() };
+
+    }
+
+    componentDidMount() {
+        this.timerId = setInterval(
+        () => this.tick(),
+        1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerId);
+    }
+
+    tick() {
+        this.setState({
+            date: new Date() });
+
+    }
+
+    render() {
+
+        return (
+            _react2.default.createElement("div", { className: "panel panel-default", __source: { fileName: _jsxFileName, lineNumber: 30 }, __self: this },
+                _react2.default.createElement("div", { className: "panel-heading", __source: { fileName: _jsxFileName, lineNumber: 31 }, __self: this },
+                    _react2.default.createElement("h3", { className: "panel-title", __source: { fileName: _jsxFileName, lineNumber: 32 }, __self: this }, "Time")),
+
+                _react2.default.createElement("div", { className: "panel-body", __source: { fileName: _jsxFileName, lineNumber: 34 }, __self: this }, "Today is ",
+                    this.state.date.toLocaleString(), "!")));
+
+
+
+    }}exports.default =
+
+
+Clock;

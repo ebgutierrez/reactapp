@@ -1,0 +1,17 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _reactRedux = require('react-redux');
+
+var _Comments = require('./../components/Comments');var _Comments2 = _interopRequireDefault(_Comments);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+const getComments = comments => {
+    return comments.reverse();
+};
+
+const mapStateToProps = state => {
+    return {
+        comments: getComments(state.comments) };
+
+};
+
+const ViewComments = (0, _reactRedux.connect)(mapStateToProps)(_Comments2.default);exports.default =
+
+ViewComments;

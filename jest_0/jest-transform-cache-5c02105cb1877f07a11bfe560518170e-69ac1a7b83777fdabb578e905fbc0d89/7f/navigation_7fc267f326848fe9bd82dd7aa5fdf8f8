@@ -1,0 +1,15 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _actions = require('./../actions/actions');
+
+const nav = (state = { route: 'clock' }, action) => {
+
+    switch (action.type) {
+        case _actions.CHANGE_NAV:
+            return Object.assign({}, state, {
+                route: action.route });
+
+        default:
+            return state;}
+
+};exports.default =
+
+nav;

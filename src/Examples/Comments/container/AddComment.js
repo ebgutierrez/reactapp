@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+/*import action*/
 import { addComment } from '../../../actions/actions';
 
+/**
+ * Container to add the comment
+ */
 class AddComment extends Component {
 
     constructor( props ) {
@@ -16,6 +21,10 @@ class AddComment extends Component {
         };
     }
 
+    /**
+     * Handles input change from input fields
+     * @param  {Object} e Event
+     */
     handleChange( e ) {
         const target = e.target,
                 value = target.value,
@@ -26,6 +35,11 @@ class AddComment extends Component {
         });
     }
 
+    /**
+     * Handles form submit
+     * @param  {Object} e Event
+     * @return {Boolean}   Returns false or empty if input fields are empty
+     */
     handleSubmit( e ) {
         e.preventDefault();
 
@@ -33,8 +47,12 @@ class AddComment extends Component {
             return;
         }
 
-        console.log('dispatch', this.props.dispatch( addComment( this.state.name.trim(), this.state.comment.trim() ) ) );
         this.props.dispatch( addComment( this.state.name.trim(), this.state.comment.trim() ) );
+
+        this.setState({
+            name    : '',
+            comment : '' 
+        });
     } 
 
     render() {
@@ -63,6 +81,9 @@ class AddComment extends Component {
     }
 }
 
+/**
+ * Connects the container to the store
+ */
 AddComment = connect()(AddComment);
 
 export default AddComment;

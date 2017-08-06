@@ -1,0 +1,64 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/var/www/html/my-app/src/Examples/Comments/components/Comments.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(_propTypes);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class Comments extends _react.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.getAbbrevName = this.getAbbrevName.bind(this);
+    }
+
+    getAbbrevName(name) {
+        const names = name.split(' ');
+        var abbrevNames = '',
+        index,
+        length;
+
+        if (names.length > 2) {
+            length = 2;
+        } else if (names.length < 2) {
+            length = 1;
+        } else {
+            length = 2;
+        }
+
+        for (index = 0; index < length; index++) {
+            abbrevNames = abbrevNames.concat(names[index].charAt(0).toUpperCase());
+        }
+
+        return abbrevNames;
+    }
+
+    render() {
+        const commentList = this.props.comments.map(comment => {
+
+            const abbrevNames = this.getAbbrevName(comment.name);
+
+            return (
+                _react2.default.createElement('li', { className: 'row', key: comment.id, __source: { fileName: _jsxFileName, lineNumber: 39 }, __self: this },
+                    _react2.default.createElement('div', { className: 'col-sm-2', __source: { fileName: _jsxFileName, lineNumber: 40 }, __self: this },
+                        _react2.default.createElement('div', { className: 'abbrev-name', __source: { fileName: _jsxFileName, lineNumber: 41 }, __self: this }, abbrevNames),
+                        _react2.default.createElement('div', { className: 'name', __source: { fileName: _jsxFileName, lineNumber: 42 }, __self: this }, comment.name)),
+
+                    _react2.default.createElement('div', { className: 'col-sm-10 comment', __source: { fileName: _jsxFileName, lineNumber: 44 }, __self: this },
+                        _react2.default.createElement('div', { className: 'date', __source: { fileName: _jsxFileName, lineNumber: 45 }, __self: this }, comment.date),
+                        _react2.default.createElement('div', { className: 'content', __source: { fileName: _jsxFileName, lineNumber: 46 }, __self: this }, comment.comment))));
+
+
+
+        });
+
+        return (
+            _react2.default.createElement('ul', { className: 'row comment-list', __source: { fileName: _jsxFileName, lineNumber: 53 }, __self: this },
+                commentList));
+
+
+    }}
+
+
+Comments.propTypes = {
+    comments: _propTypes2.default.array };exports.default =
+
+
+Comments;
