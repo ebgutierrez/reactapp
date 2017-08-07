@@ -1,4 +1,4 @@
-This project is a sample dahsboard UI using React/Redux.
+This project is a sample dashboard UI using React/Redux.
 This also uses bootstrap 3.
 
 The examples given are

@@ -10,6 +10,7 @@ class Comments extends Component {
         super( props );
 
         this.getAbbrevName = this.getAbbrevName.bind( this );
+        this.getCommentCount = this.getCommentCount.bind( this );
     }
 
     /**
@@ -38,6 +39,21 @@ class Comments extends Component {
         return abbrevNames;
     }
 
+    getCommentCount() {
+
+        console.log('comment count here');
+
+        const count = this.props.comments.length;
+        var   countSuffix = 'Comment';
+
+        console.log('count', count, this.props.comments);
+        if( count > 1 ) {
+            countSuffix += 's';            
+        }
+
+        return count + ' ' + countSuffix;
+    }
+
     render() {
         const commentList = this.props.comments.map( (comment) => {
 
@@ -45,11 +61,11 @@ class Comments extends Component {
 
             return (
                 <li className = 'row' key = { comment.id }>
-                    <div className = 'col-sm-2'>
+                    <div className = 'col-xs-2 col-sm-1'>
                         <div className = 'abbrev-name'>{ abbrevNames }</div>
-                        <div className = 'name'>{ comment.name }</div>
                     </div>
-                    <div className = 'col-sm-10 comment'>
+                    <div className = 'col-xs-9 col-sm-11 comment'>
+                        <div className = 'name'>{ comment.name }</div>
                         <div className = 'date'>{ comment.date }</div>
                         <div className = 'content'>{ comment.comment }</div>
                     </div>
@@ -58,9 +74,12 @@ class Comments extends Component {
         } );
 
         return (
-            <ul className = 'row comment-list'>
-                { commentList }
-            </ul>
+            <div className = 'comments' >
+                <div className = 'comment-count'>{this.getCommentCount()}</div>
+                <ul className = 'row comment-list'>
+                    { commentList }
+                </ul>
+            </div>
         );
     }
 }
