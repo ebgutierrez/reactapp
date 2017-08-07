@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import AlertContainer from 'react-alert';
 
 /*import action*/
 import { addComment } from '../../../actions/actions';
@@ -16,8 +17,15 @@ class AddComment extends Component {
         this.handleSubmit = this.handleSubmit.bind( this );
 
         this.state = {
-            name    : '',
-            comment : ''
+            name      : '',
+            comment   : '',
+            alertOptions   : {
+                offset     : 14,
+                position   : 'bottom right',
+                theme      : 'dark',
+                time       : 5000,
+                transition : 'scale'
+              }
         };
     }
 
@@ -44,6 +52,7 @@ class AddComment extends Component {
         e.preventDefault();
 
         if( !this.state.name.trim() || !this.state.comment.trim() ) {
+            this.msg.error('Fill empty fields');
             return;
         }
 
@@ -53,6 +62,8 @@ class AddComment extends Component {
             name    : '',
             comment : '' 
         });
+
+        this.msg.success('Comment posted successfully!');
     } 
 
     render() {
@@ -62,20 +73,23 @@ class AddComment extends Component {
                     <input  type        = 'text'
                             className   = 'form-control'
                             id          = 'name'
-                            placeholder = 'Name'
+                            placeholder = '* Name'
                             name        = 'name'
                             value       = { this.state.name }
-                            onChange    = { this.handleChange }/>
+                            onChange    = { this.handleChange }
+                            required/>
                 </div>
                 <div className = 'form-group'>
                     <textarea   className   = 'form-control'
                                 id          = 'comment'
-                                placeholder = 'Comment'
+                                placeholder = '* Comment'
                                 name        = 'comment'
                                 value       = { this.state.comment }
-                                onChange    = { this.handleChange }/>
+                                onChange    = { this.handleChange }
+                                required/>
                 </div>
                 <button type='submit' className='btn btn-default'>Submit</button>
+                <AlertContainer ref={ alert => this.msg = alert } { ... this.state.alertOptions }/>
             </form>
         );
     }

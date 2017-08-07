@@ -41,12 +41,9 @@ class Comments extends Component {
 
     getCommentCount() {
 
-        console.log('comment count here');
-
         const count = this.props.comments.length;
         var   countSuffix = 'Comment';
 
-        console.log('count', count, this.props.comments);
         if( count > 1 ) {
             countSuffix += 's';            
         }
@@ -61,10 +58,10 @@ class Comments extends Component {
 
             return (
                 <li className = 'row' key = { comment.id }>
-                    <div className = 'col-xs-2 col-sm-1'>
+                    <div className = 'col-xs-2 col-sm-1 col-m-1'>
                         <div className = 'abbrev-name'>{ abbrevNames }</div>
                     </div>
-                    <div className = 'col-xs-9 col-sm-11 comment'>
+                    <div className = 'col-xs-9 col-sm-10 col-m-11 comment'>
                         <div className = 'name'>{ comment.name }</div>
                         <div className = 'date'>{ comment.date }</div>
                         <div className = 'content'>{ comment.comment }</div>
